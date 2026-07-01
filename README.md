@@ -9,7 +9,7 @@ Graph Neural Networks (GNNs) represent a monumental shift in deep learning, expa
 
 The technical progression of graph-based deep learning reflects a clear shift from rigid spectral domain calculus to localized spatial message-passing and modern scalable transformer-hybrid structures.
 
-```
+```mermaid
 [Spectral Domain GCNs (Kipf & Welling, 2016)] ───> [Spatial Message Passing (MPNN / GAT, 2017)] ───> [Graph Transformers (2022-Present)](Heavy Global Fourier Graph Laplacians)              (Localized Message Aggregation Kernels)             (Global All-to-All Virtual Token Maps)
 ```
 
