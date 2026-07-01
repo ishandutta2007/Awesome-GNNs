@@ -31,21 +31,21 @@ flowchart LR
 
 GNN architectures are strictly categorized based on how they extract, scale, and mathematically aggregate feature parameters across local neighborhood boundaries.
 
-### A. Graph Convolutional Networks (GCN)
-*   **Mechanism:** Anisotropic isotropic spatial operator. It computes a localized forward-pass update by taking a normalized average of a target node's immediate neighborhood features, scaling them via a static degree matrix.
-*   **Pros:** Computationally lightweight, but cannot differentiate the relative structural importance of one neighbor over another.
+-  ### A. Graph Convolutional Networks (GCN)
+    *   **Mechanism:** Anisotropic isotropic spatial operator. It computes a localized forward-pass update by taking a normalized average of a target node's immediate neighborhood features, scaling them via a static degree matrix.
+    *   **Pros:** Computationally lightweight, but cannot differentiate the relative structural importance of one neighbor over another.
 
-### B. Graph Attention Networks (GAT)
-*   **Mechanism:** Anisotropic attention-driven operator. It projects query vectors from a target node against key vectors from adjacent neighbors, applying a Softmax normalization to calculate dynamic weighting scalars.
-*   **Pros:** Allows the network to learn to selectively ignore noisy connections while amplifying critical relational feature pathways.
+-  ### B. Graph Attention Networks (GAT)
+    *   **Mechanism:** Anisotropic attention-driven operator. It projects query vectors from a target node against key vectors from adjacent neighbors, applying a Softmax normalization to calculate dynamic weighting scalars.
+    *   **Pros:** Allows the network to learn to selectively ignore noisy connections while amplifying critical relational feature pathways.
 
-### C. GraphSAGE (Sample and Aggregate)
-*   **Mechanism:** Inductive mini-batch neighborhood pooling framework. Instead of reading an entire localized neighborhood matrix, it uniformly samples a fixed-capacity subset of neighbors (e.g., max 10 nodes) at each layer step, running aggregation functions like Max-Pooling or LSTMs.
-*   **Significance:* Crucial for scaling GNNs to massive web-scale industrial graphs (like billions of user profiles), decoupling memory footprint explosion from dense node connectivity boundaries.
+-  ### C. GraphSAGE (Sample and Aggregate)
+    *   **Mechanism:** Inductive mini-batch neighborhood pooling framework. Instead of reading an entire localized neighborhood matrix, it uniformly samples a fixed-capacity subset of neighbors (e.g., max 10 nodes) at each layer step, running aggregation functions like Max-Pooling or LSTMs.
+    *   **Significance:** Crucial for scaling GNNs to massive web-scale industrial graphs (like billions of user profiles), decoupling memory footprint explosion from dense node connectivity boundaries.
 
-### D. Graph Isomorphism Networks (GIN)
-*   **Mechanism:** A highly powerful, theoretical expressiveness baseline developed by Xu et al. It proves mathematically that standard GCN and GAT models cannot distinguish certain distinct graph structures (like multi-branch trees). GIN fixes this by deploying injective aggregation functions (such as sum-pooling mapped via multi-layer perceptrons).
-*   **Significance:* Achieves maximal discriminatory capability, matching the theoretical ceiling of the **1-Weisfeiler-Lehman (1-WL) graph isomorphism test**.
+-  ### D. Graph Isomorphism Networks (GIN)
+    *   **Mechanism:** A highly powerful, theoretical expressiveness baseline developed by Xu et al. It proves mathematically that standard GCN and GAT models cannot distinguish certain distinct graph structures (like multi-branch trees). GIN fixes this by deploying injective aggregation functions (such as sum-pooling mapped via multi-layer perceptrons).
+    *   **Significance:** Achieves maximal discriminatory capability, matching the theoretical ceiling of the **1-Weisfeiler-Lehman (1-WL) graph isomorphism test**.
 
 ---
 
